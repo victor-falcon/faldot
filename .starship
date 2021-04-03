@@ -1,0 +1,14 @@
+format = "🦅 $all"
+add_newline = true
+
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[➜](bold red)"
+
+[cmd_duration]
+format = "[took](italic) [$duration]($style) "
+style = "bold italic yellow"
+
+[git_branch]
+format = "[on](italic) [$symbol$branch]($style) "
+symbol = ""

@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# Setup variables
+REPO='https://github.com/victor-falcon/faldot.git'
+FALPATH="$HOME/.faldot"
+
+# Colors
+Red='\033[0;31m'
+Green='\033[0;32m'
+Yellow='\033[0;33m'
+Blue='\033[0;34m'
+Purple='\033[0;35m'
+Cyan='\033[0;36m'
+Normal='\033[0m'
+
+# Writers
+_w() {
+  local -r text="${1:-}"
+  echo -e "$text"
+}
+_b () { _w ""; }
+_t() { 
+  _b
+  _w " > ${Blue}$1${Normal}";
+}
+_i () { _w "${Yellow}$1${Normal}";  }
+
+
+_b
+_b
+echo -e "${Green}       dMMMMMP .aMMMb  dMP     dMMMMb  .aMMMb dMMMMMMP "
+echo -e "${Green}      dMP     dMP"dMP dMP     dMP VMP dMP"dMP   dMP    "
+echo -e "${Green}     dMMMP   dMMMMMP dMP     dMP dMP dMP dMP   dMP     "
+echo -e "${Green}    dMP     dMP dMP dMP     dMP.aMP dMP.aMP   dMP      "
+echo -e "${Green}   dMP     dMP dMP dMMMMMP dMMMMP"  VMMMP"   dMP       "
+_b
+_b
+
+# Clone
+_t "💾 Cloning repository..."
+git clone --recursive "$REPO" "$FALPATH"
+_i "✅ Cloned into ${Green}${FALPATH}${Normal}."
+_b
+
+# Install
+_t "🕵️‍♂️ Installing faldot"
+"$FALPATH"/install.sh
